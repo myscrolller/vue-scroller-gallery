@@ -6,6 +6,8 @@ function shuffle(array) {
         let j = Math.floor(Math.random() * (i + 1));
         [array[i], array[j]] = [array[j], array[i]];
     }
+
+    return array;
 }
 
 function debounce(context = this, func, wait, immediate) {
@@ -23,8 +25,6 @@ function debounce(context = this, func, wait, immediate) {
 		if (callNow) func.apply(context, args);
 	};
 };
-
-var suffledImages = shuffle(images);
 
 var imageContainer = document.querySelector('.imageContainer');
 
@@ -54,14 +54,10 @@ document.getElementById('import').onclick = function() {
     var formatted = JSON.stringify(result, null, 2);
         
     document.getElementById('result').value = formatted;
-    images = result;
+    images = shuffle(result);
   }
 
   fr.readAsText(files[0]);
-};
-
-document.getElementById('use').onclick = function() {
-    images = document.getElementById('result').result;
 };
 
 document.getElementById('start').onclick = function() {
