@@ -1,0 +1,37 @@
+<script src="https://npmcdn.com/vue/dist/vue.js"></script>
+
+
+<meta content="width=device-width, initial-scale=1" name="viewport" />
+
+<input type="file" id="selectFiles" value="Import" />
+<button id="import">Import</button>
+<textarea id="result"></textarea>
+<button id="use">Use JSON</button>
+<button id="start">Start App</button>
+
+<div id="app"
+    class="hidden">
+    <div class="imageContainer"
+        v-scroll="scrollHandler">
+        <div v-for="image in loadedImages" 
+            class="imageFrame"
+            @click.prevent="showOverlay">
+            <img 
+                :src="image.link"
+                class="imageBlock"
+                :data-overlayOrientation="getOverlayOrientation(image.link)"
+                :class="getImageOrientation(image.link)">
+        </div>
+    </div>
+    <div v-if="shouldShowOverlay"
+        @click="hideOverlay"
+        class="overlayContainer">
+        <img :src="overlaySrc"
+            class="overlayImage"
+            :class="overlayOrientation">
+    </div>
+  
+</div>
+
+<script src="./App.js"></script>
+<link rel = "stylesheet" type = "text/css" href = "./App.css" />

@@ -1,0 +1,98 @@
+#result {
+    display:block;
+    width:400px;
+    height:200px;
+  }
+  
+#use,
+#start,  
+#import {
+    display: block;
+    margin:10px 0;
+}
+
+body {
+    background-color: black;
+}
+
+.hidden {
+    display: none;
+}
+
+.imageContainer {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: center;
+}
+
+.imageFrame {
+    position: relative;
+    overflow: hidden;
+    width: 95vw;
+    height: 95vw;
+    margin: 5px;
+    cursor: pointer;
+}
+
+.imageBlock {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    -webkit-transform: translate(-50%,-50%);
+    -ms-transform: translate(-50%,-50%);
+    transform: translate(-50%,-50%);
+    height: 100%;
+    width: auto;
+}
+
+.imageBlock.vertical {
+    width: 100%;
+    height: auto;
+}
+
+@media (min-width: 768px) {
+    .imageFrame {
+        width: calc(47vw - 10px);
+        height: calc(47vw - 10px);
+    }
+}
+
+@media (min-width: 1280px) {
+    .imageFrame {
+        width: calc(32vw - 10px);
+        height: calc(32vw - 10px);
+    }
+}
+    
+
+@media (min-width: 1600px) {
+    .imageFrame {
+        width: calc(24vw - 10px);
+        height: calc(24vw - 10px);
+    }
+}
+
+.overlayContainer {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    cursor: pointer;
+    background: rgba(0, 0, 0, 0.8);
+}
+
+.overlayImage {
+    display: block;
+    margin: 0 auto;
+    width: 100vw;
+    height: auto;
+    max-width: 100vw;
+    max-height: 100vh;
+}
+
+.overlayImage.vertical {
+    width: auto;
+    height: 100vh;
+}
