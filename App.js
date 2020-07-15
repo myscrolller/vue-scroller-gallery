@@ -66,6 +66,7 @@ document.getElementById('start').onclick = function() {
         return;
     }
 
+    document.querySelector('.menu').classList.add('hidden');
     document.getElementById('app').classList.remove('hidden');
 
     new Vue({
